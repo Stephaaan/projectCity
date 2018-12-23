@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/png" href="imgs/icon.png"/>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Thasadith" rel="stylesheet">
+    <script src="js/master.js" charset="utf-8"></script>
+
+
+    <title>Weather Forecast</title>
+  </head>
+  <body>
+    <header>
+      <div class="header">
+        <img src="imgs/icon.png">
+        <h1 class="pageName">Forecast</h1>
+        <div class="searchBar">
+          <input class="searchInput" type="text" id="cityName" value="" placeholder="Kosice, SK">
+          <button class="searchBtn" onclick="submit()" type="button" id="searchButton" name="button">Find</button>
+        </div>
+      </div>
+    </header>
+    <section align="center">
+      <div class="backgroundDiv">
+        &nbsp;
+      </div>
+      <div class="info">
+        <div class="cards">
+          <div class="cardNow">
+            <div class="cardName">
+              Today
+              <span id="dateNow" class="date">20.12</span>
+            </div>
+            <div class="locationLabel">
+              <img style="margin-top:-3px" height="15px" src="imgs/location_icon.png">
+              <span id="location">Kosice</span>
+            </div>
+            <div class="temperatureLabel">
+              <span id="temperatureNow">23</span>°C <span class="weatherIcon"><img id="weatherNowIcon" src="imgs/icons/icon-1.svg"></span>
+            </div>
+            <div class="additionalInfo">
+              <img class="icon-small" src="imgs/icon-umberella.png"> <span id="humidityNow">80</span>% &nbsp
+              <img class="icon-small" src="imgs/icon-wind.png"> <span id="windNow">15</span>km/h
+            </div>
+          </div>
+          <div class="cardOthers">
+            <div class="card cardLight">
+              <div class="cardName">
+                <span id="secondDayTime">Tuesday</span>
+                <span id="dateSecond" class="dateSecond">20.12</span>
+              </div>
+              <div class="weatherIconSmallCard"> <img id="weatherSecondIcon" src="imgs/icons/icon-1.svg"> </div>
+              <span class="temperatureSmallLabel"><span id="temperatureSecond">23</span>°C</span>
+              <div class="additionalInfo aiSmall">
+                <img class="icon-small" src="imgs/icon-umberella.png"> <span id="humiditySecond">80</span>% &nbsp
+                <img class="icon-small" src="imgs/icon-wind.png"> <span id="windSecond">15</span>km/h
+              </div>
+            </div>
+            <div class="card cardDark">
+              <div class="cardName">
+                <span id="thirdDayTime">Tuesday</span>
+                <span id="dateThird" class="dateSecond">20.12</span>
+              </div>
+              <div class="weatherIconSmallCard"> <img id="weatherThirdIcon" src="imgs/icons/icon-1.svg"> </div>
+              <span class="temperatureSmallLabel"><span id="temperatureThird">23</span>°C</span>
+              <div class="additionalInfo aiSmall">
+                <img class="icon-small" src="imgs/icon-umberella.png"> <span id="humidityThird">80</span>% &nbsp
+                <img class="icon-small" src="imgs/icon-wind.png"> <span id="windThird">15</span>km/h
+              </div>
+            </div>
+            <div class="card cardLight">
+              <div class="cardName">
+                <span id="fourthDayTime">Tuesday</span>
+                <span id="dateFourth" class="dateSecond">20.12</span>
+              </div>
+              <div class="weatherIconSmallCard"> <img id="weatherFourthIcon" src="imgs/icons/icon-1.svg"> </div>
+              <span class="temperatureSmallLabel"><span id="temperatureFourth">23</span>°C</span>
+              <div class="additionalInfo aiSmall">
+                <img class="icon-small" src="imgs/icon-umberella.png"> <span id="humidityFourth">80</span>% &nbsp
+                <img class="icon-small" src="imgs/icon-wind.png"> <span id="windFourth">15</span>km/h
+              </div>
+            </div>
+            <div class="card cardDark">
+              <div class="cardName">
+                <span id="fifthDayTime">Tuesday</span>
+                <span id="dateFifth" class="dateSecond">20.12</span>
+              </div>
+              <div class="weatherIconSmallCard"> <img id="weatherFifthIcon" src="imgs/icons/icon-1.svg"> </div>
+              <span class="temperatureSmallLabel"><span id="temperatureFifth">23</span>°C</span>
+              <div class="additionalInfo aiSmall">
+                <img class="icon-small" src="imgs/icon-umberella.png"> <span id="humidityFifth">80</span>% &nbsp
+                <img class="icon-small" src="imgs/icon-wind.png"> <span id="windFifth">15</span>km/h
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="map" id="basicMap"></div>
+      <div class="favLocations">
+        <h3>Most searched:</h3>
+        <span onclick="handleMostSearched(1)">London</span>
+        <span onclick="handleMostSearched(2)">New York</span>
+        <span onclick="handleMostSearched(3)">Paris</span>
+        <span onclick="handleMostSearched(4)">Barcelona</span>
+        <span onclick="handleMostSearched(5)">Sydney</span>
+        <span onclick="handleMostSearched(6)">Berlin</span>
+        <span onclick="handleMostSearched(7)">Rome</span>
+        <span onclick="handleMostSearched(8)">Bratislava</span>
+      </div>
+      <div class="mapBackground">&nbsp</div>
+    </section>
+    <div class="footerBackground">&nbsp</div>
+    <footer>(c) 2018 by Stefan Rothmajer</footer>
+  </body>
+
+</html>

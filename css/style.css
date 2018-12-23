@@ -1,0 +1,220 @@
+*{
+  margin:0;
+  padding:0;
+  font-family: 'Thasadith', sans-serif;
+}
+
+.header{
+  width: 100%;
+  height:100px;
+  background-color: #333333;
+}
+.header img{
+  width: 80px;
+  margin-top:10px;
+  margin-left: 50px;
+  float:left;
+}
+.header img:hover{
+  animation-name: logoAnim;
+  animation-duration: 1s;
+}
+.pageName{
+  color: 	#999999;
+  padding:25px;
+  padding-left: 200px;
+}
+.searchBar{
+  left:900px;
+  top:-75px;
+  width:300px;
+  height:40px;
+  position:relative;
+  border: 2px solid #999;
+  border-radius: 20px;
+}
+.searchInput{
+  background-color:#333;
+  width:212px;
+  height: 100%;
+  border-style: none;
+  color:#999;
+  border-radius: 20px;
+  padding:15px;
+}
+.searchBtn{
+  background-color: blue;
+  height: 100%;
+  width: 80px;
+  border-style: none;
+  position:relative;
+  left:0px;
+  top:-1px;
+  border-radius: 20px;
+}
+.backgroundDiv{
+  background: lightblue url("../imgs/bg.jpg") center;
+  width: 100%;
+  height: 200px;
+}
+.info{
+  background-color:#111;
+  width: 100%;
+  height:350px;
+}
+.cards{
+  background-color:#444;
+  width: 80%;
+  height:200px;
+  margin:auto;
+  position:relative;
+  top:-80px;
+}
+.cardNow{
+  width:250px;
+  height:100%;
+  background-color:#4a5972;
+  text-align: left;
+  float:left;
+}
+.cardName{
+  font-weight: bold;
+  width: 100%;
+  height:40px;
+  background-color: #2c3442;
+  color:#999;
+  text-align:left;
+  padding-left:15px;
+  padding-top:5px;
+  font-size:20px;
+}
+.locationLabel{
+  font-weight: bold;
+  margin-left:20px;
+  margin-top:10px;
+  color:#999;
+}
+.temperatureLabel{
+  color:#999;
+  font-size:2.2em;
+  font-weight: bold;
+  margin-left: 40px;
+}
+.weatherIcon{
+  margin-left: 20px;
+  position:relative;
+  top:-5px;
+}
+.date{
+  font-size: 0.7em;
+  position:relative;
+  right:-150px;
+}
+.additionalInfo{
+  color:#999;
+  font-weight: bolder;
+  margin-left: 20px;
+  margin-top: 30px;
+  font-size:1.15em;
+}
+.iconSmall{
+  margin-right: 20px;
+}
+.cardOthers{
+  width: 100%;
+  height: 100%;
+}
+.card{
+  width:19%;
+  height: 100%;
+  float:left;
+  border-radius: 0px !important;
+  border-style:none !important;
+}
+.dateSecond{
+  font-size: 0.7em;
+  position:relative;
+  left:50px;
+}
+.cardLight{
+  background-color:#627491 !important;
+}
+.cardDark{
+  background-color:#4a5972 !important;
+}
+.map{
+  position:relative;
+  top:-120px;
+  width:60%;
+  height:400px;
+  margin:auto;
+}
+.mapHolder{
+  width:100%;
+}
+.mapBackground{
+  width:100%;
+  height:150px;
+  background:url("../imgs/banner.png") center !important;
+  background-size: contain;
+}
+.weatherIconSmallCard{
+  position:relative;
+  top:15px;
+}
+.temperatureSmallLabel{
+  font-size: 1.5em;
+  color:#999;
+  position:absolute;
+  top: 105px;
+  left:75px;
+}
+.aiSmall{
+  position:absolute;
+  bottom:20px;
+}
+.favLocations{
+  margin-top: -60px;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+.favLocations h3{
+  font-weight: bolder;
+}
+.favLocations span{
+  margin-right: 30px;
+  cursor:pointer;
+}
+.footerBackground{
+  width: 100%;
+  height: 40px;
+  background-color:#222;
+  z-index: -1;
+}
+footer{
+  width:50%;
+  height: 80px;
+  background-color:#222;
+  margin:auto;
+  color:#aaa;
+  text-align: center;
+  padding-top:35px;
+  margin-top: -80px;
+}
+@keyframes logoAnim {
+  0% {
+    width:80px;
+    margin-top:10px;
+    margin-left: 50px;
+  }
+  50% {
+    width:90px;
+    margin-top:5px;
+    margin-left: 45px;
+  }
+  0% {
+    width:80px;
+    margin-top:10px;
+    margin-left: 50px;
+  }
+}
